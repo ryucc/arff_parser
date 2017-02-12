@@ -20,6 +20,9 @@ def parse_arff(filename):
         if line[0] == '%':
             line = aaa.readline()
             continue
+        if '%' in line:
+            ind = line.find('%')
+            line = line[:ind]
         p = line.split()
         if p[0].upper() == '@RELATION':
             obj['relation'] = p[1];
