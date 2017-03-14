@@ -36,7 +36,7 @@ def parse_arff(filename):
             break;
         line = aaa.readline()
     while line:
-        line = line[:-1]
+        line = line.strip()
         dt = re.split('\n|,',line)
         while '' in dt:
             dt.remove('')
